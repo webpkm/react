@@ -1,29 +1,24 @@
 import React, { Component } from 'react';
 
-class User extends Component {
+export class User extends React.Component {
   constructor() {
     super();
   }
 
   render() {
-    let user = {
-      firstName: 'Prem',
-      lastName: 'Kumar'
-    }
+    console.log(this.props);
     return (
       <div>
         <h2>User Details:</h2>
         <div>
           <p>
-            First Name: {user.firstName}
+            First Name: {this.props.user.firstName}
           </p>
           <p>  
-            Last Name: {user.lastName}
+            Last Name: {this.props.user.lastName}
           </p>
         </div>
       </div>
     )
   }
 }
-
-export default User;

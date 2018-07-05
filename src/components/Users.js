@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Home extends Component {
+export class Users extends Component {
   constructor() {
     super();
   }
@@ -8,10 +8,10 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <p>Home</p>
+        {this.props.children}
+        <p>Users</p>
+        <p> {JSON.stringify(this.props.users)}</p>
       </div>
     )
   }
 }
-
-export default Home;
