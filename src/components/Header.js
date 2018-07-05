@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 
 export class Header extends Component {
-  constructor() {
-    super();
-  }
-
+  
   render() {
     return (
       <nav className="navbar navbar-default">
@@ -16,12 +13,12 @@ export class Header extends Component {
               <span className="icon-bar"></span>
               <span className="icon-bar"></span>
             </button>
-            <a className="navbar-brand" href="#">Brand</a>
+            <a className="navbar-brand" href="/home">Brand</a>
           </div>
           <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">      
             <ul className="nav navbar-nav navbar-right">
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Users</a></li>
+              <li><a href="/home">Home</a></li>
+              <li><a href="/users">Users</a></li>
             </ul>
           </div>
         </div>

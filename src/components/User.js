@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 
-export class User extends React.Component {
-  constructor() {
-    super();
-  }
-
+export class User extends Component {
+  
   render() {
     console.log(this.props);
     return (
