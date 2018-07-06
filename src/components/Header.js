@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Menu } from "./Menu";
+import { NavLink } from "react-router-dom";
 
 export class Header extends Component {
   
@@ -13,14 +15,9 @@ export class Header extends Component {
               <span className="icon-bar"></span>
               <span className="icon-bar"></span>
             </button>
-            <a className="navbar-brand" href="/home">Brand</a>
+            <NavLink to="/home" activeClassName="active" className="navbar-brand">ReactJS Basics</NavLink>
           </div>
-          <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">      
-            <ul className="nav navbar-nav navbar-right">
-              <li><a href="/home">Home</a></li>
-              <li><a href="/users">Users</a></li>
-            </ul>
-          </div>
+          <Menu/>          
         </div>
       </nav>
     )

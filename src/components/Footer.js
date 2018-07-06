@@ -3,9 +3,9 @@ import React, { Component } from 'react';
 export class Footer extends Component {
     render() {
     return (
-      <div>
-        <p>Footer</p>
-      </div>
+      <footer className="container-fluid">
+        <p>&copy; ReactJS</p>
+      </footer>
     )
   }
 }

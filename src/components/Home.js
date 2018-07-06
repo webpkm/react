@@ -17,7 +17,9 @@ export class Home extends Component {
     });
   }
 
-
+  clickMe() {
+    alert("Clicked Me!");
+  }
   render() {
     let contant = "";
     if (true) {
@@ -27,7 +29,7 @@ export class Home extends Component {
       <div>
         <div> { contant } </div>
         <p> { this.age }</p>
-        <button className="btn btn-primary">Click Me</button>
+        <button className="btn btn-primary" onClick={this.clickMe.bind(this)}>Click Me</button>
         <button onClick={this.makeMeOlder.bind(this)} className="btn btn-primary">Make me older</button>
         <button onClick={() => this.makeMeOlder()} className="btn btn-primary">Make me older</button>
       </div>

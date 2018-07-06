@@ -3,10 +3,10 @@ import './App.css';
 import { Home } from "./components/Home";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
-import { Menu } from "./components/Menu";
 import { Users } from "./components/Users";
 import { User } from "./components/User";
 import { Login } from './components/Login';
+import { BrowserRouter, Route } from "react-router-dom";
 
 class App extends Component {
   constructor() {
@@ -39,20 +39,20 @@ class App extends Component {
     }    
 
     return (
-      <div className="container">
-        <Header/>
-        <div className="App">
-          <Login username={this.state.username}/>
-          <Menu/>
-          <Home age={25}/>
-          <Users
-          users={users}
-          userChange={this.userChange.bind(this)}
-          ><h2>User list</h2></Users>
-          <User user={this.state.user}/>
+      <BrowserRouter>
+        <div>
+          <Header/>
+          <div className="container">
+            <Route exact path={"/"} render={() => <Home age={25}/>}/>
+            <Route exact path={"/home"} render={() => <Home age={25}/>}/>
+            <Route exact path={"/login"} render={() => <Login username={this.state.username}/>}/>
+            <Route exact path={"/user"} component={ User }/>
+            <Route exact path={"/users"} render={() => <Users users={users}/>}/>
+            <Route path={"/courses/"} render={() => <p>This is course</p>}/>
+          </div>
           <Footer/>
         </div>
-      </div>
+      </BrowserRouter>
     );
   }
 }
