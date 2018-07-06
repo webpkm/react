@@ -3,7 +3,11 @@ import PropTypes from 'prop-types';
 
 
 export class Users extends Component {
-  
+
+  onUserChange(user) {
+    this.props.userChange(user);
+  }
+
   render() {
     return (
       <div>
@@ -24,7 +28,7 @@ export class Users extends Component {
             <td> {i+1} </td>
             <td>{user.firstName}</td>
             <td>{user.lastName}</td>
-            <td><button className="btn btn-success" user={user}>View user</button></td>
+            <td><button className="btn btn-success" onClick={() => this.onUserChange(user)}>View user</button></td>
           </tr>
           )}
           </tbody>

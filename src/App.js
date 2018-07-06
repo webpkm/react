@@ -8,6 +8,19 @@ import { Users } from "./components/Users";
 import { User } from "./components/User";
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      user: {}
+    };
+  }
+
+  userChange(newUser) {
+    this.setState({
+      user: newUser
+    });
+  }
+
   render() {
     let users = [{
       firstName: 'Prem',
@@ -18,19 +31,22 @@ class App extends Component {
       lastName: 'Khatri'
     }];
 
-    let user = {
+    this.user = {
       firstName: 'Prem',
       lastName: 'Kumar'
-    }
+    }    
 
     return (
       <div className="container">
         <Header/>
         <div className="App">
           <Menu/>
-          <Home/>
-          <Users users={users}><h2>User list</h2></Users>
-          <User user={user}/>
+          <Home age={25}/>
+          <Users
+          users={users}
+          userChange={this.userChange.bind(this)}
+          ><h2>User list</h2></Users>
+          <User user={this.state.user}/>
           <Footer/>
         </div>
       </div>
