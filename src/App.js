@@ -6,6 +6,7 @@ import { Footer } from "./components/Footer";
 import { Menu } from "./components/Menu";
 import { Users } from "./components/Users";
 import { User } from "./components/User";
+import { Login } from './components/Login';
 
 class App extends Component {
   constructor() {
@@ -40,6 +41,7 @@ class App extends Component {
       <div className="container">
         <Header/>
         <div className="App">
+          <Login/>
           <Menu/>
           <Home age={25}/>
           <Users
