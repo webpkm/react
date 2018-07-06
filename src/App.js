@@ -12,7 +12,8 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      user: {}
+      user: {},
+      username: 'admin'
     };
   }
 
@@ -41,7 +42,7 @@ class App extends Component {
       <div className="container">
         <Header/>
         <div className="App">
-          <Login/>
+          <Login username={this.state.username}/>
           <Menu/>
           <Home age={25}/>
           <Users
